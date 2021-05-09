@@ -12,6 +12,46 @@
 //E5S1.Solucion Simple:
 console.log("Ejercicio 5:")
 console.log("-----------------------------------------------------------------------------------")
+function invertir(cadena) {
+    let x = cadena.length;
+    let cadenaInvertida = "";
+  
+    while (x>=0) {
+      cadenaInvertida = cadenaInvertida + cadena.charAt(x);
+      x--;
+    }
+    return cadenaInvertida;
+  }
+console.log(invertir("Hola Mundo"))
+
+//E5S2.Function Expression y for y validacion
+const invertirT = function(cadena=""){
+    let invertida =""
+    if(!cadena){
+        console.log("No escribiste una cadena")
+    }else{
+        for (let index = cadena.length; index >= 0; index--) {
+            invertida = invertida+cadena.charAt(index)
+        } 
+    }
+    return invertida;
+}
+console.log(invertirT("Otra Prueba"));
+
+//E5S3 Arrow Function y Operador Ternario
+const invertirA = (cadena="") =>{
+    let invertida =""
+    if(!cadena){
+        console.log("No escribiste una cadena")
+    }else{
+        for (let index = cadena.length; index >= 0; index--) {
+            invertida = invertida+cadena.charAt(index)
+        } 
+    }
+    console.log(invertida)
+}
+invertirA("Una Mas")
+
 
 
 //--------------------------------------------------------------------------------------------
