@@ -10,8 +10,8 @@
 //--------------------------------------------------------------------------------------------
 
 //E5S1.Solucion Simple:
-console.log("Ejercicio 5:")
 console.log("-----------------------------------------------------------------------------------")
+console.log("Ejercicio 5:")
 function invertir(cadena) {
     let x = cadena.length;
     let cadenaInvertida = "";
@@ -38,7 +38,7 @@ const invertirT = function(cadena=""){
 }
 console.log(invertirT("Otra Prueba"));
 
-//E5S3 Arrow Function y Operador Ternario
+//E5S3 Arrow Function 
 const invertirA = (cadena="") =>{
     let invertida =""
     if(!cadena){
@@ -52,23 +52,95 @@ const invertirA = (cadena="") =>{
 }
 invertirA("Una Mas")
 
+//E5S4 ArrowF - Operador ternario y array methods
+const invertirCadena = (cadena="") =>
+(!cadena)
+?console.warn("No ingresate ningun texto")
+:console.info(cadena.split("").reverse().join(""));//convierto el string a array, lo invierto con reverse y lo vuelvo a unir con join
 
+invertirCadena("Haciendo una Prueba");
 
 //--------------------------------------------------------------------------------------------
 
 //E6S1.Solución Simple
-console.log("Ejercicio 6:")
 console.log("-----------------------------------------------------------------------------------")
+console.log("Ejercicio 6:")
+function repetido (miCadena){
+    cuenta = 0;
+    posicion = miCadena.indexOf("mundo");
+    while ( posicion != -1 ) {
+        cuenta++;
+        posicion = miCadena.indexOf("mundo",posicion+1);
+}
+console.log(cuenta)
+}
+repetido("hola mundo adios mundo, en mi mundo", "mundo")
+
+//E6S2 ARROW FUNCTION
+const textoEnCadena = (cadena="", texto="") =>{
+    if (!cadena)return console.warn("No ingresaste el texto largo");
+    if (!texto)return console.warn("No ingresaste la palabra a buscar");
+
+    let i = 0,
+        contador = 0;
+    
+    while(i!==-1){
+        i=cadena.indexOf(texto, i);
+        if(i!=-1){
+            i++;
+            contador++;
+        }
+    }
+    return console.info(`La palabra "${texto}" se repite ${contador} veces`)
+}
+
+textoEnCadena("En mi mundo yo saludo: hola mundo", "mundo")
 
 
 //--------------------------------------------------------------------------------------------
 
 //E7S1.Solución Simple
-console.log("Ejercicio 7:")
 console.log("-----------------------------------------------------------------------------------")
+console.log("Ejercicio 7:")
+function palindromo(texto) {
+    let invertida =""
+    if(!texto){
+        console.log("No escribiste una cadena")
+    }else{
+        for (let index = texto.length; index >= 0; index--) {
+            invertida = invertida+texto.charAt(index)
+        } 
+    }
+    const textoi = invertida;
+    (texto === textoi)
+    ?console.log(`la palabra "${texto}" es un palindromo`)
+    :console.log(`la palabra "${texto}" NO es un palindromo`)
+}
+palindromo("salas");
+
+//E7S2
+const palindrom = (palabra="") =>{
+    if (!palabra)return console.warn("No ingresaste la palabra a evaluar");
+
+    palabra = palabra.toLocaleLowerCase();//para asegurarme por si ponen la primera en mayuscula
+    let alReves = palabra.split("").reverse().join("");
+    return(palabra === alReves)
+    ?console.info(`La palabra "${palabra}" es palindroma.`)
+    :console.log(`La palabra "${palabra}" no es palindroma.`)
+}
+palindrom("perro")
 
 //--------------------------------------------------------------------------------------------
 
 //E8S1.Solucion Simple
-console.log("Ejercicio 8:")
 console.log("-----------------------------------------------------------------------------------")
+console.log("Ejercicio 8:")
+
+const eliminarCaracteres = (texto="", patron="") =>
+(!texto)
+    ? console.warn("No ingresaste un texto")
+    :(!patron)
+        ? console.warn("No ingresaste un patron")
+        :console.info(texto.replace(new RegExp(patron, "ig"),""))
+
+eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
