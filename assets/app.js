@@ -1,4 +1,4 @@
-/*Ejercicios Basicos JS Nivel 1
+/*Ejercicios Basicos JS Nivel 2
     5.Programa una función que invierta las palabras de una cadena de texto.Ejemplo: miFuncion("Hola Mundo") devolverá "odnuM aloH".
     6.Programa una función para contar el número de veces que se repite una palabra en un texto largo.Ejemplo: miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
     7.Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro).Ejemplo mifuncion("Salas") devolverá true.
